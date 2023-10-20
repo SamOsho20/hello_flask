@@ -11,6 +11,12 @@ def success():
 @app.route('/hello/<name>')
 def hello(name):
     return f"hello {name}"
+
+@app.route('/users/<username>/<id>')
+def show_users_and_id(username,id):
+    print(username)
+    print(id)
+    return "Username:" + username + ",id:"+ id
     
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True)  
